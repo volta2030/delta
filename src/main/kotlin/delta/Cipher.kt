@@ -11,12 +11,12 @@ class Cipher {
                     -128 -> {
                         i = byteArray.size
                     }
-                    in 0 until 128 -> {
-                        decryption += byteArray.sliceArray(i+ 1 until i + 1 + (integer + 1))
+                    in 0..<128 -> {
+                        decryption += byteArray.sliceArray(i+ 1..<i + 1 + (integer + 1))
                         i += integer + 2
                     }
-                    in -127 until 0 -> {
-                        for(j : Int in 0 until -integer + 1){
+                    in -127..<0 -> {
+                        for(j : Int in 0..<-integer + 1){
                             decryption += byteArray[i + 1]
                         }
                         i += 2
