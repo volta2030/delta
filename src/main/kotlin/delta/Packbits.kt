@@ -2,13 +2,6 @@ package delta
 
 class Packbits {
     companion object : Cipher{
-        @Deprecated("This method is deprecated. Use the decode() instead.",
-            ReplaceWith("decode(byteArray)", "delta.Packbits.Companion.decode")
-        )
-        fun decodePackBits(byteArray: ByteArray) : ByteArray{
-            return decode(byteArray)
-        }
-
         override fun encode(byteArray: ByteArray) : ByteArray {
 
             var duplicateCount = 0
@@ -16,6 +9,11 @@ class Packbits {
             var encryption = byteArrayOf()
 
             byteArray.forEachIndexed { index, byte ->
+
+                if(index == byteArray.size - 1){
+                    println("끝트머리!!!")
+                }
+
                 if(byte != byteArray[index + 1]){
                     if(duplicateCount > 0){
                         encryption += (-duplicateCount).toByte()
