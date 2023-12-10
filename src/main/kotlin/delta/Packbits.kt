@@ -1,8 +1,8 @@
 package delta
 
 class Packbits {
-    companion object : Cipher{
-        override fun encode(byteArray: ByteArray) : ByteArray {
+    companion object {
+        fun encode(byteArray: ByteArray) : ByteArray {
 
             var duplicateCount = 0
             var queue = byteArrayOf()
@@ -35,7 +35,7 @@ class Packbits {
             return encryption
         }
 
-        override fun decode(byteArray: ByteArray) : ByteArray {
+       fun decode(byteArray: ByteArray) : ByteArray {
             var decryption = byteArrayOf()
             var i = 0
             while(i < byteArray.size){
