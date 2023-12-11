@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    implementation ("com.github.volta2030:delta:1.0.19")
+    implementation ("com.github.volta2030:delta:1.1.0")
 }
 
 ```
